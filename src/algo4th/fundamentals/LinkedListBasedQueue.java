@@ -28,7 +28,7 @@ public class LinkedListBasedQueue<T> implements Iterable<T> {
             throw new NoSuchElementException();
         }
         T item = head.getItem();
-        head.setNext(head.getNext());
+        head = head.getNext();
         if (isEmpty()) {
             tail = null;
         }
@@ -53,6 +53,7 @@ public class LinkedListBasedQueue<T> implements Iterable<T> {
         LinkedListBasedQueue<Integer> queue = new LinkedListBasedQueue<>();
         queue.enqueue(1);
         queue.enqueue(5);
+        queue.dequeue();
         queue.enqueue(10);
         queue.enqueue(33);
 
